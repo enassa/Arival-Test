@@ -32,7 +32,7 @@ const Landing: React.FC = () => {
           navigate(item.url);
         }}
         href={item.url}
-        className="flex items-center mr-5 animate-rise shadow-md px-3 whitespace-nowrap mt-2 p-2 hover:bg-gray-100"
+        className="flex items-center  animate-rise shadow-md px-3 whitespace-nowrap mt-2 p-2 hover:bg-gray-100"
       >
         <span className="h-[100px] flex mr-2">{item.icon}</span>
         <span className="">{item.text}</span>
@@ -42,7 +42,7 @@ const Landing: React.FC = () => {
 
   return (
     <div className="flex items-center justify-center h-full w-full">
-      <div className="w-[300px] items-center  flex justify-start flex-col">
+      <div className="w-[300px] items-center  flex justify-center flex-col">
         {ejectUrls()}
       </div>
     </div>
