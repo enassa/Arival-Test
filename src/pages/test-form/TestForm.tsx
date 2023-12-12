@@ -47,7 +47,7 @@ export default function TestForm() {
 
   //  ************ A Multistep form generator which allows user to handle styling
   return (
-    <div className="w-full h-full flex items-start flex-col overflow-y-scroll">
+    <div className="w-full h-full flex items-start flex-col overflow-y-auto">
       <MultiStepFormGenerator
         title="Super test form"
         formSteps={USER_FORM as FormStep[]}

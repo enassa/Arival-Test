@@ -12,6 +12,8 @@ import { DefaultStepWrapper } from "../config/defaults";
 interface StepProps {
   stepData: FormStep;
   stepIndex: number;
+  steps: FormStep[],
+  activeStep: number
   components: FormComponents;
   handleChange: (
     e: React.ChangeEvent<HTMLInputElement>,
@@ -35,6 +37,8 @@ const StepRenderer: React.FC<StepProps> = React.memo(
     handleChange,
     handleSubmit,
     handleBlur,
+    steps,
+    activeStep
   }) => {
     // **************** Memoized functions to handle change and focus events for fields
     const memoizedOnChange = useCallback(
@@ -115,7 +119,7 @@ const StepRenderer: React.FC<StepProps> = React.memo(
         {renderStepFields()}
         {ButtonComponent && (
           <ButtonComponent
-            data={{ disabled: disabled }}
+            data={{ disabled: disabled, steps, activeStep }}
             onClick={(e) => memoizedOnSubmit(e)}
           />
         )}

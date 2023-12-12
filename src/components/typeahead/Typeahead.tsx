@@ -97,18 +97,19 @@ const TypeAhead: TypeAheadComponent = memo(
               dropListData: countries,
             }));
           }, 2000);
-
+          
         })
         .catch((error) => {
           console.error("Error during fetch:", error);
         })
         .finally(() => {
+          // Added set interval just to show loading animation.
           setInterval(() => {
             setTypeAheadState((prev) => ({
               ...prev,
               loading: false,
             }));
-          }, 2000);
+          }, 5000);
         });
     };
 
@@ -175,7 +176,7 @@ const TypeAhead: TypeAheadComponent = memo(
       <div className="w-full flex flex-col justify-start relative mt-[2px]">
         <label
           htmlFor={name}
-          className="w-full text-white relative b-[30px] text-[16px]"
+          className="w-full md:text-white text-primary relative b-[30px] text-[16px]"
         >
           {label}
         </label>
@@ -183,7 +184,7 @@ const TypeAhead: TypeAheadComponent = memo(
         <div
           className={` ${className} ${
             disabled ? "bg-gray-100" : "bg-white"
-          } h-[40px] flex flex-row items-center justify-between w-full border-[1px] outline-none cursor-pointer  relative`}
+          } h-[40px] flex flex-row items-center justify-between w-full outline-none cursor-pointer relative border-2 border-primary md:border-transparent md:border-0`}
         >
           {/* *************************** Main Input element ****************/}
           <input
@@ -229,7 +230,7 @@ const TypeAhead: TypeAheadComponent = memo(
           >
             {typeAhead.dropListData?.length ? (
               <div
-                className={`w-full h-auto type-ahead animate-rise bg-white z-[20] max-h-[190px] overflow-y-auto shadow-md  flex flex-col absolute top-[74px] overflow-x-hidden text-ellipsis whitespace-nowrap ${dropContainerClassName}`}
+                className={`w-full h-auto type-ahead animate-rise bg-white z-[20] md:max-h-[190px] max-h-[130px] overflow-y-auto shadow-md  flex flex-col absolute md:top-[74px] top-[71px] overflow-x-hidden text-ellipsis whitespace-nowrap ${dropContainerClassName}`}
               >
                 {getOptions()}
               </div>

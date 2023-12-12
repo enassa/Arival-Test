@@ -75,7 +75,7 @@ const MultiStepFormGenerator: MultiStepFormProvider = ({
 
   const handleChangeStep = (step: number): void => {
     // *************** If same step is clicked, do nothing
-    if (step === formState.activeStep) return;
+    if (step === formState.activeStep || step < 0) return;
     const stepFields = formState.formSteps[formState.activeStep]?.fields || [];
     const isActiveStepValid = stepFields.every(
       (item) => (item as any).state.valid

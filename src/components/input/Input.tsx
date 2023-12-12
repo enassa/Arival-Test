@@ -9,10 +9,10 @@ const Input: InputTextComponent = memo(
       data;
     return (
       <div className=" mt-[5px] w-full mb-1">
-        <label className="text-white" htmlFor={`name${index}`}>
+        <label className="md:text-white text-primary" htmlFor={`name${index}`}>
           {label}
         </label>
-        <div className="flex justify-center items-center bg-white mt-[5px] relative p-0">
+        <div className="flex justify-center items-center bg-white mt-[5px] relative p-0 rounded-md md:rounded-none border-2 border-primary md:border-transparent md:border-0">
           <input
             id={`name${index}`}
             className="w-full min-h-[40px] outline-none  bg-transparent px-[10px] pr-[30px]"

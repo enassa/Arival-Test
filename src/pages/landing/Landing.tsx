@@ -42,7 +42,7 @@ const Landing: React.FC = () => {
 
   return (
     <div className="flex items-center justify-center h-full w-full">
-      <div className="w-[300px]  flex justify-start flex-col">
+      <div className="w-[300px] items-center  flex justify-start flex-col">
         {ejectUrls()}
       </div>
     </div>

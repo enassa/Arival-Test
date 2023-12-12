@@ -3,8 +3,10 @@ import { FormPreviewWrapperComponent } from "../../library/multi-step-form/confi
 
 const PreviewWrapper: FormPreviewWrapperComponent = memo(({ children }) => {
   return (
-    <div className="w-full h-full flex flex-col item-center p-3 m-2 justify-center items-center ">
-      <div className="w-[400px] h-auto bg-primary py-[12px] px-[20px] rounded-[25px]">{children}</div>
+    <div className="w-full h-full flex md:justify-start items-center justify-center flex-col">
+      <div className="md:w-[400px] w-[95%] md:h-auto justify-start flex flex-col bg-primary shadow-md md:shadow-none py-[12px] px-[20px] md:rounded-[25px] border-2  md:border-transparent md:border-0">
+        {children}
+      </div>
     </div>
   );
 });

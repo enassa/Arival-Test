@@ -93,7 +93,7 @@ export const USER_FORM: FormStep[] = [
           required: true,
           matchWith: "password",
         },
-        errorText: "Password do not match",
+        errorText: "Passwords do not match",
       },
     ],
   },

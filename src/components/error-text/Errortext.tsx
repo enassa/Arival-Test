@@ -2,7 +2,7 @@ import { FormErrortextComponent } from "../../library/multi-step-form/config/for
 
 const Errortext: FormErrortextComponent = ({ data }) => {
   const { text, show } = data;
-  return <div className="text-red-100 w-full text-xs min-h-[15px] h-[15px] text-">
+  return <div className="md:text-red-100 text-error w-full text-xs min-h-[15px] h-[15px] mt-[2px]">
       {show && <span>{text}</span>}
     </div>;
 }

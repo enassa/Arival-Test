@@ -52,7 +52,7 @@ const PreviewRenderer: React.FC<PreviewProps> = React.memo(
         {renderPreviewLabels()}
         {ButtonComponent && (
           <ButtonComponent
-            data={{ disabled: !valid, text: 'Complete'}}
+            data={{ disabled: !valid, text: 'Complete', steps: formState.formSteps, activeStep: formState.activeStep}}
             onClick={(e) => memoizedOnSubmit(e)}
           />
         )}

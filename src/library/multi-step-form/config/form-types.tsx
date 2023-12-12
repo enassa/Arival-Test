@@ -104,6 +104,8 @@ export interface PreviewStep {
 export interface Button {
   disabled: boolean;
   text?: string;
+  steps: FormStep[],
+  activeStep: number
 }
 
 export interface Navigation {
