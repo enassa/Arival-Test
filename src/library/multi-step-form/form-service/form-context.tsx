@@ -95,11 +95,6 @@ const MultiStepFormGenerator: MultiStepFormProvider = ({
     setFormState((prev) => ({ ...prev, activeStep: formState.activeStep + 1 }));
   };
 
-  const gotToPrevStep = (): void => {
-    if (formState.activeStep - 1 < 0) return;
-    setFormState((prev) => ({ ...prev, activeStep: formState.activeStep - 1 }));
-  };
-
   const gotToStepX = (step): void => {
     setFormState((prev) => ({ ...prev, activeStep: step }));
   };

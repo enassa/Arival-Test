@@ -1,4 +1,3 @@
-import React, { ChangeEvent, FormEvent } from "react";
 import Button from "../../components/button/Button";
 import Input from "../../components/input/Input";
 import PreviewWrapper from "../../components/preview-wrapper/PreviewWrapper";
@@ -21,8 +20,8 @@ import { saveObjectInSession } from "../../library/multi-step-form/form-utils/fu
 
 export default function TestForm() {
   const navigate = useNavigate();
-  const handleChanges = (param: any) => {
-    // console.log(param);
+  const handleChanges = (update: any) => {
+    console.log(update);
   };
 
   const handleSubmit = (formData: any) => {
@@ -48,10 +47,10 @@ export default function TestForm() {
 
   //  ************ A Multistep form generator which allows user to handle styling
   return (
-    <div className="w-full h-full flex items-start flex-col">
+    <div className="w-full h-full flex items-start flex-col overflow-y-scroll">
       <MultiStepFormGenerator
-        title="Super test Form"
-        formSteps={USER_FORM as FormStep[]} // Assuming USER_FORM is an array of FormStep
+        title="Super test form"
+        formSteps={USER_FORM as FormStep[]}
         previewTitle="Review"
         components={components}
         onSubmit={handleSubmit}

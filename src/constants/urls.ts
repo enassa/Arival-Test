@@ -1,1 +1,1 @@
-export const  projectGitHubURL = ""
+export const  GIT_URL = "https://github.com/enassa/Arival-Test"

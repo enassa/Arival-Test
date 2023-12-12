@@ -3,6 +3,7 @@ import { svgs } from "../../assets/svgs/svgs";
 import { useNavigate } from "react-router-dom";
 import { ROUTES } from "../../constants/routes";
 import { getAsObjectFromSession } from "../../library/multi-step-form/form-utils/functions";
+import { GIT_URL } from "../../constants/urls";
 
 const Success: React.FC = () => {
   const navigate = useNavigate();
@@ -43,9 +44,9 @@ const Success: React.FC = () => {
           href="/"
           onClick={(e) => {
             e.preventDefault();
-            navigate(ROUTES.base.url);
+            location.assign(GIT_URL);
           }}
-          className="text-bgTrade cursor-pointer text-black text-red-800 font-extrabold ml-1 flex items-center"
+          className="text-bgTrade cursor-pointer text-red-800 font-extrabold ml-1 flex items-center"
         >
           <span> here to Check the code</span>
           <span className="flex h-[20px] whitespace-nowrap items-center ml-2 bg-red-50 rounded-full">

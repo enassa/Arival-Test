@@ -34,7 +34,7 @@ const TypeAhead: TypeAheadComponent = memo(
             .filter((option) => option.match(reg))
         : typeAhead?.dropListData.map((item) => item[optionsKey]);
 
-    const isValid = (param) => {
+    const isValid = (param: any) => {
       const currentValue = (param.targte as HTMLInputElement)?.value || param;
       return optionsListArr.includes(currentValue);
     };
@@ -96,7 +96,7 @@ const TypeAhead: TypeAheadComponent = memo(
               ...prev,
               dropListData: countries,
             }));
-          }, 5000);
+          }, 2000);
 
         })
         .catch((error) => {
@@ -108,7 +108,7 @@ const TypeAhead: TypeAheadComponent = memo(
               ...prev,
               loading: false,
             }));
-          }, 5000);
+          }, 2000);
         });
     };
 
@@ -172,10 +172,10 @@ const TypeAhead: TypeAheadComponent = memo(
     }, []);
 
     return (
-      <div className="w-full flex flex-col justify-start relative mt-[8px]">
+      <div className="w-full flex flex-col justify-start relative mt-[2px]">
         <label
           htmlFor={name}
-          className="w-full text-white relative b-[30px] text-[18px]"
+          className="w-full text-white relative b-[30px] text-[16px]"
         >
           {label}
         </label>

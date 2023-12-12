@@ -1,12 +1,13 @@
 import React from "react";
 import { ROUTES } from "../../constants/routes";
-import { svgs } from "../../assets/svgs/svgs"; // Assuming you have SvgType defined in svgs file
+import { svgs } from "../../assets/svgs/svgs";
 import { useNavigate } from "react-router-dom";
+import { GIT_URL } from "../../constants/urls";
 
 interface Link {
   text: string;
   url: string;
-  icon: any; // Assuming you have a type for your svgs
+  icon: any;
 }
 
 const Landing: React.FC = () => {
@@ -14,7 +15,7 @@ const Landing: React.FC = () => {
 
   const links: Link[] = [
     { text: "Test Demo", url: ROUTES.form.url, icon: svgs.Demo },
-    { text: "Test Repo", url:'TODO-add git url', icon: svgs.Github },
+    { text: "Test Repo", url: GIT_URL, icon: svgs.Github },
   ];
 
   const ejectUrls = () => {
@@ -23,6 +24,11 @@ const Landing: React.FC = () => {
         key={index}
         onClick={(e) => {
           e.preventDefault();
+
+          if(item.text == "Test Repo"){
+            location.assign(item.url)
+            return;
+          }
           navigate(item.url);
         }}
         href={item.url}

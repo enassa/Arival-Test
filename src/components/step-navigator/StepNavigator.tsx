@@ -47,7 +47,7 @@ const StepNavigator: FormNavigationComponent = ({ data, onChange }) => {
   };
 
   return (
-    <div className="flex justify-start flex-col h-full absolute left-0 top-0 item-center p-3 m-2 rounded-md text-blue-900">
+    <div className="flex justify-start flex-col h-full absolute left-0 top-0 item-center p-3 pl-[4%] rounded-md text-blue-900">
       {getSteps()}
     </div>
   );
