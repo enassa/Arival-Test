@@ -2,6 +2,7 @@ import { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ROUTES } from './constants/routes';
 import Landing from './pages/landing/Landing';
+import { FallBack } from './components/fallback/FallBack';
 
 // Lazy-loaded components
 const TestForm = lazy(() => import('./pages/test-form/TestForm'));
@@ -20,7 +21,7 @@ function App() {
         <Route
           path={ROUTES.form.route}
           element={
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<FallBack/>}>
               <TestForm />
             </Suspense>
           }
@@ -28,7 +29,7 @@ function App() {
         <Route
           path={ROUTES.success.route}
           element={
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<FallBack/>}>
               <Success />
             </Suspense>
           }
