@@ -1,0 +1,83 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+#root,
+body {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  overflow: hidden;
+  background-image: url('./assets/svgs/background.svg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: 'Inter', sans-serif;  font-weight: 400;
+}
+
+.fit-bg {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 20px 10px white;
+  border: solid 3px transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  box-shadow: inset 0 0 20px 10px #DBD7EE;
+  border: solid 3px transparent;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  box-shadow: inset 0 0 20px 10px #b0adbd;
+  border: solid 3px transparent;
+}
+
+@keyframes infinite-slide {
+  0% {
+    transform: scaleX(1);
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: scaleX(0.4);
+    transform: translateX(20%);
+  }
+  100% {
+    transform: scaleX(0.8);
+    transform: translateX(170%);
+  }
+}
+
+.infinite-slide {
+  animation-name: infinite-slide;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: right;
+  animation-timing-function: alternate;
+}
+.landing-bg {
+  background: linear-gradient(rgb(30, 32, 50) 0%, rgb(30, 34, 79) 100%)
+}
